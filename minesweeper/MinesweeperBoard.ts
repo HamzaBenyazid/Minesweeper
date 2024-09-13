@@ -53,7 +53,6 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 		const boardHeader = boardContainer.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-header` },
 		});
-		// header top border
 		const boardHeaderTopBorder = boardHeader.createDiv({
 			attr: {
 				class: `mnswpr-classic mnswpr-header header-row top-border`,
@@ -71,7 +70,6 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 		boardHeaderTopBorder.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-header top-right` },
 		});
-		// left border | dashboard | right border
 		const boardHeaderCenter = boardHeader.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-header header-row center` },
 		});
@@ -82,7 +80,6 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 		boardHeaderCenter.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-header right-border` },
 		});
-		// header bottom border
 		const boardHeaderBottom = boardHeader.createDiv({
 			attr: {
 				class: `mnswpr-classic mnswpr-header header-row bottom-border`,
@@ -110,11 +107,9 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 		const boardBody = boardContainer.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-body` },
 		});
-		// add left border
 		boardBody.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-body mnswpr-ver-border` },
 		});
-		// content
 		const boardContent = boardBody.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-content` },
 		});
@@ -144,7 +139,7 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 					this.makeMove(rowIndex, colIndex, cellDiv);
 				});
 				cellDiv.addEventListener("contextmenu", (e) => {
-					e.preventDefault(); // Prevent the default right-click behavior
+					e.preventDefault();
 					this.toggleFlagCell(rowIndex, colIndex);
 				});
 			}
@@ -152,7 +147,6 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 		boardBody.createDiv({
 			attr: { class: `mnswpr-classic mnswpr-body mnswpr-ver-border` },
 		});
-		// add right border
 	}
 
 	drawBoardBottomBorder(boardContainer: Element) {
@@ -260,7 +254,7 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 		const timeCounterDiv = this.containerEl.querySelector(".time-counter");
 		if (timeCounterDiv) {
 			const digNumberDiv = this.renderDigitalNumber(this.timeCounter);
-			timeCounterDiv.textContent = ""; // Clear the div
+			timeCounterDiv.textContent = "";
 			timeCounterDiv.appendChild(digNumberDiv);
 		}
 	}
@@ -271,7 +265,7 @@ export class MinesweeperBoard extends MarkdownRenderChild {
 			const digNumberDiv = this.renderDigitalNumber(
 				this.minesweeper.numMines - this.minesweeper.flagCount
 			);
-			mineCounterDiv.textContent = ""; // Clear the div
+			mineCounterDiv.textContent = "";
 			mineCounterDiv.appendChild(digNumberDiv);
 		}
 	}
