@@ -5,7 +5,7 @@
 	"minAppVersion": "0.15.0",
 	"description": "Insert a Minesweeper board into your note and start playing",
 	"author": "Hamza Ben Yazid",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"authorUrl": "https://github.com/HamzaBenyazid",
+	"fundingUrl": " https://github.com/sponsors/HamzaBenyazid",
 	"isDesktopOnly": false
 }
